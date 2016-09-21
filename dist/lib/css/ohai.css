@@ -1,0 +1,172 @@
+body {
+font-family: 'Lato', sans-serif;
+}
+
+#sidebar-wrapper {
+    background: #17373f;
+}
+
+#sidebar-wrapper::after {
+  content: "";
+  background: url(http://ohai-app.com/img/bg-cta.jpg);
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  background-size:cover;
+}
+
+ul.sidebar .sidebar-list {
+    height: 100px;
+}
+
+ul.sidebar .sidebar-title {
+    color: #42cc8a;
+    letter-spacing: .1em;
+}
+
+ul.sidebar .sidebar-main a {
+    background: linear-gradient(to left, #42cc8a, #00adb5);
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+
+ul.sidebar .sidebar-list a {
+    text-indent: 25px;
+    font-size: 1em;
+    color: #eee;
+    letter-spacing: .06em;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+
+ul.sidebar .sidebar-list .menu-icon {
+    line-height: 100px;
+}
+
+.link1 {
+    background: rgba(0,173,181,.6);
+}
+
+.link2 {
+    background: rgba(0,173,181,.4);
+}
+
+.link3 {
+    background: rgba(0,173,181,.2);
+}
+
+.link4 {
+    background: rgba(0,173,181,.1);
+}
+
+
+.row.header {
+    background: #17373f;
+}
+
+.meta {
+    color: #eee;
+}
+
+
+.content.ng-scope {
+    padding: 20px;
+}
+
+
+.alert {
+    border-radius: 0px !important;
+}
+
+.alert.ng-scope.ng-isolate-scope.alert-announcement.alert-dismissible {
+    background-color: #fff;
+}
+
+.alerttitle {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: .9em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.alert-announcement .alerttitle {
+    color: #43af7c;
+}
+
+.alertmessage {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.alert-danger > span.alerttitle.ng-binding.ng-scope {
+    color: #fff !important;
+}
+
+
+
+
+/* ---- RESPONDERS ---- */
+
+section.box {
+    background-color: #ffffff;
+    margin: 15px;
+}
+
+section header {
+    width: 100%;
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    border-bottom: 2px solid rgba(31, 181, 172, 1.0);
+    vertical-align: top;
+    position: relative;
+}
+
+section header .title {
+    margin-top: 10px;
+    font-size: 19px;
+    padding-left: 15px;
+    line-height: 30px;
+    color: #676767;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+section.box .actions {
+    margin: 0 15px;
+    line-height: 50px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+section .content-body {
+    padding: 10px;
+    padding-top: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-top: 0px;
+    -webkit-transition: 800ms;
+    -moz-transition: 800ms;
+    -o-transition: 800ms;
+    transition: 800ms;
+}
+
+section.box .actions i {
+    color: #bcbcbc;
+    font-size: 12px;
+    margin-left: 0px;
+    padding: 5px;
+    cursor: hand;
+    cursor: pointer;
+}
