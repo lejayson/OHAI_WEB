@@ -3,6 +3,11 @@ font-family: 'lato', sans-serif;
 background: #f1f4f5;
 }
 
+
+#content-wrapper {
+    background-color: #f1f4f5;
+}
+
 #sidebar-wrapper {
     background: #17373f;
 }
