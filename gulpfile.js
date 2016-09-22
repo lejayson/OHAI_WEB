@@ -29,7 +29,7 @@ var paths = {
             css: [minifyCss({keepSpecialComments: 0}), 'concat'],
         }))
         .pipe(gulp.dest('dist/'));
-});**/
+});*/
 
 /**
  * Copy assets
