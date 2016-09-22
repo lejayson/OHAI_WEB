@@ -29,7 +29,8 @@ var paths = {
             css: [minifyCss({keepSpecialComments: 0}), 'concat'],
         }))
         .pipe(gulp.dest('dist/'));
-});*/
+});
+**/
 
 /**
  * Copy assets
@@ -104,5 +105,5 @@ gulp.task('livereload', function() {
 /**
  * Gulp tasks
  */
-gulp.task('build', ['build-assets', 'build-custom']);
+gulp.task('build', ['build-assets', 'build-custom']); //'usemin', 
 gulp.task('default', ['build', 'webserver', 'livereload', 'watch']);
