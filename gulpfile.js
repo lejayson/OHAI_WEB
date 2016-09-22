@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    usemin = require('gulp-usemin'),
+    // usemin = require('gulp-usemin'),
     wrap = require('gulp-wrap'),
     connect = require('gulp-connect'),
     watch = require('gulp-watch'),
