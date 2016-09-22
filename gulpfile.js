@@ -82,7 +82,7 @@ gulp.task('watch', function() {
     gulp.watch([paths.styles], ['custom-less']);
     gulp.watch([paths.scripts], ['custom-js']);
     gulp.watch([paths.templates], ['custom-templates']);
-    gulp.watch([paths.index], ['usemin']);
+    //gulp.watch([paths.index], ['usemin']);
 });
 
 /**
