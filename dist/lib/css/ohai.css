@@ -1,6 +1,6 @@
 body {
 font-family: 'lato', sans-serif;
-background: #f1f4f5;
+background: #f1f4f5 !important;
 }
 
 
@@ -83,6 +83,8 @@ ul.sidebar .sidebar-list .menu-icon {
 #dashmap {
     width: 100%;
     height: 500px;
+    overflow: hidden;
+    padding-left: 0px;
 }
 .content.ng-scope {
     padding: 20px;
@@ -298,6 +300,10 @@ h4.event-heading {
     margin: 0px;
 }
 
+.event-item {
+    padding: 8px;
+}
+
 .event-list {
     border: 0px;
     border-bottom: 1px solid #eee;
@@ -496,3 +502,76 @@ button:focus {
 .grid-item--height2 { height: 200px; }
 .grid-item--height3 { height: 260px; }
 .grid-item--height4 { height: 360px; }
+
+
+
+.modal-dialog {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    top: 40%;
+    position: inherit;
+}
+
+
+.modal-content {
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+.map-div {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+
+.active-map {
+    height: 500px;
+    background-color: #ddd;
+    position: absolute;
+}
+
+.not-active-map {
+    left: -1000px;
+}
+
+
+.infowindow-name {
+    font-size: 1.4em;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1.3em;
+    color: #1b515f;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+}
+
+.infowindow p {
+    margin-bottom: 0px;
+}
+
+.infowindow-img {
+    width: 80px;
+    overflow: hidden;
+    height: 80px;
+    float: left;
+    margin-right: 16px;
+}
+
+.infowindow-imglink {
+    width: 100%;
+}
+	
+
+.pie-chart-pretty {
+    margin: 0 auto;
+}
+
+.chart-container {
+    margin:0 auto;
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 3px;
+}
