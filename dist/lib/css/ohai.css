@@ -80,7 +80,10 @@ ul.sidebar .sidebar-list .menu-icon {
     color: #eee;
 }
 
-
+#dashmap {
+    width: 100%;
+    height: 500px;
+}
 .content.ng-scope {
     padding: 20px;
 }
