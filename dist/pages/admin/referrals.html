@@ -28,7 +28,7 @@
 
 
 
-<div class="row">
+<div class="row" data-ng-controller="ReferalCtrl">
   <div class="col-lg-10">
     <div class="referralmap">
       <h4 class="event-title">List of Events
@@ -42,112 +42,38 @@
          </div>
       </form>
       </div>
-    <div class="col-sm-6 padding-top">
+    <div ng-repeat="list in refpgLists" class="col-sm-6 padding-top">
       <li class="list-group-item referral-tile">
         <div class="media">
           <div class="media event-item">
             <div class="media-left">
-              <img class="referral-img" src="/img/placeholder/arunlee.jpg">
+              <img class="referral-img" src="{{list.imgurl}}">
             </div>
             <div class="media-body"> 
               <div class="event-edit-buttons referral-edit">
-                  <button class="icon-button"><i class="icon ion-edit  event-edit"></i> </button>                  
-                <button class="icon-button"><i class="icon ion-ios-gear  event-edit">
+                <button ng-click="AssignResp($index)" class="icon-button"><i class="icon ion-edit  event-edit"></i> </button>                  
+                <button ng-click="removeMarker($index)" class="icon-button"><i class="icon ion-ios-gear  event-edit">
                 </i></button>
               </div>
               
     
     
-              <h4 class="referral-name">Terry Lauro
+              <h4 class="referral-name">{{list.name}}
               </h4> 
               <p>
                 <span class="referral-info">PEOPLE
-                </span> 0 Adult  ||  1 Child
+                </span> {{list.adults}} Adult  ||  {{list.children}} Child
               </p>
               <p>
                 <span class="referral-info">DATE
-                </span> 2016-09-16
-              </p>
-              <p>
-                <span class="referral-info">LOCATION
-                </span> 2016-09-16
+                </span> {{list.referdate}}
               </p>
             </div>
             <p class="referral-assign">
                 <span class="referral-info">ASSIGNED TO
-                </span><span class="referral-responder">Beckham Johnson</span>
+                </span><span class="referral-responder"></span>
               </p>
             <p class="referral-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada.
-            </p>
-          </div>
-        </div>
-      </li>
-    </div>
-      <div class="col-sm-6 padding-top">
-      <li class="list-group-item referral-tile">
-        <div class="media">
-          <div class="media event-item">
-            <div class="media-left">
-              <img class="referral-img" src="/img/placeholder/arunlee.jpg">
-            </div>
-            <div class="media-body"> 
-              <div class="event-edit-buttons referral-edit">
-                <i class="icon ion-edit  event-edit">
-                </i> 
-                <i class="icon ion-ios-gear  event-edit">
-                </i>
-              </div>
-              <h4 class="referral-name">Terry Lauro
-              </h4> 
-              <p>
-                <span class="referral-info">PEOPLE
-                </span> 0 Adult  ||  1 Child
-              </p>
-              <p>
-                <span class="referral-info">DATE
-                </span> 2016-09-16
-              </p>
-              <p>
-                <span class="referral-info">LOCATION
-                </span> 2016-09-16
-              </p>
-            </div>
-            <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada.
-            </p>
-          </div>
-        </div>
-      </li>
-    </div>
-      <div class="col-sm-6 padding-top">
-      <li class="list-group-item referral-tile">
-        <div class="media">
-          <div class="media event-item">
-            <div class="media-left">
-              <img class="referral-img" src="/img/placeholder/arunlee.jpg">
-            </div>
-            <div class="media-body"> 
-              <div class="event-edit-buttons referral-edit">
-                <i class="icon ion-edit  event-edit">
-                </i> 
-                <i class="icon ion-ios-gear  event-edit">
-                </i>
-              </div>
-              <h4 class="referral-name">Terry Lauro
-              </h4> 
-              <p>
-                <span class="referral-info">PEOPLE
-                </span> 0 Adult  ||  1 Child
-              </p>
-              <p>
-                <span class="referral-info">DATE
-                </span> 2016-09-16
-              </p>
-              <p>
-                <span class="referral-info">LOCATION
-                </span> 2016-09-16
-              </p>
-            </div>
-            <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada.
             </p>
           </div>
         </div>
