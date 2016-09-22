@@ -1,162 +1,45 @@
-<section class="box ">
-   <header class="panel_header">
-      <h2 class="title pull-left">LIST OF RESPONDERS</h2>
-      <div class="actions panel_actions pull-right">
-         <i class="box_toggle fa fa-chevron-down"></i>
-         <i class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></i>
-         <i class="box_close fa fa-times"></i>
-      </div>
-   </header>
-   <div class="content-body">
-      <div class="row">
-         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-1.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mrs. Brodeur</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 45<br>Occupation: HouseWife</span>
-                     </div>
+<div class="responder-page">
+   <div class="panel responder">
+      <form class="page-search-form" role="search">
+         <div class="input-search input-search-dark">
+           
+            <input type="text" class="form-control" id="inputSearch" name="search" placeholder="Search Users">
+         </div>
+      </form>
+      <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+         <li class="active" role="presentation"><a href="/#">All Responders</a></li>
+         <li><a href="/#">Active Responders</a></li>
+         <li><a href="/#">Not Active</a></li>
+          <li class="add-responder"><a class="new-responder" href="/#"><i class="icon ion-plus add-new"></i>Add New Responder</a></li>
+      </ul>
+      <div class="responder-content">
+         <li class="responder-list">
+            <div class="media">
+               <div class="media-left responder-image">
+                  <div class="responder-avatar">
+                     <img src="/img/placeholder/arunlee.jpg" alt="...">
+                     <i class="avatar avatar-busy"></i>
                   </div>
                </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-2.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Ms. Latshaw</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 39<br>Occupation: Teacher</span>
-                     </div>
-                  </div>
+               <div class="media-body responder-info">
+                  <h4 class="responder-name">
+                     Herman Beck
+                      <small>Institute of Human Services</small>
+                  </h4>
+                  <p><i class="icon ion-location responder-icon"></i>          DISTRICT 13
+                  </p>
+                   
+                   <p><i class="icon ion-ios-telephone responder-icon"></i>239.239.1820
+                  </p>
+                   
+                   <p><i class="icon ion-email responder-icon"></i>          hisemail@gmail.com
+                  </p>
                </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-3.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mrs. Clementina</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 34<br>Occupation: Journalist</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-4.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Carri Busey</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 29<br>Occupation: Industrialist</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-5.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Ms. Clay Dock</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 65<br>Occupation: Book Writer</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-6.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Mark Peskin</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 57<br>Occupation: Ex. Armyman</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-7.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Arthur John.</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 65<br>Occupation: Carpenter</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-8.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Carri Busey</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 29<br>Occupation: Industrialist</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-9.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Ms. Clay Dock</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 65<br>Occupation: Book Writer</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-10.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Mark Peskin</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 57<br>Occupation: Ex. Armyman</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-11.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mr. Arthur John.</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 65<br>Occupation: Carpenter</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="team-member ">
-                     <div class="team-img">
-                        <img class="img-responsive" src="data/patients/patient-12.jpg" alt="">
-                     </div>
-                     <div class="team-info">
-                        <h4><a href="hos-patient-profile.html">Mrs. Jonh A.</a></h4>
-                        <span class="team-member-edit"><a href="hos-patient-edit.html"><i class="fa fa-pencil icon-xs"></i></a></span>
-                        <span>Age: 29<br>Occupation: Teacher</span>
-                     </div>
-                  </div>
+               <div class="media-right responder-active">
+                  <button type="button" class="btn btn-outline btn-success btn-sm responder-button">Current Active Referrals</button>
                </div>
             </div>
-         </div>
+         </li>
       </div>
    </div>
-</section>
+</div>
