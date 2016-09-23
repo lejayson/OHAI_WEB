@@ -1,87 +1,320 @@
 <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
   <div class="col-xs-12">
     <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
-        <span class="alerttitle">{{alert.title}}</span>
-        <span class="alertmessage">{{alert.msg}}</span></uib-alert>
+      <span class="alerttitle">{{alert.title}}
+      </span>
+      <span class="alertmessage">{{alert.msg}}
+      </span>
+    </uib-alert>
+  </div>
+</div>
+<div class="map-info-container">
+  <div class="row map-div" data-ng-controller="dashboardCtrl">
+    <div class="row col-lg-12" id="dashmap" data-tap-disabled="true">
+    </div>
+    <div class="col-md-4 not-active-map">
+      <div class="info-popout">popout
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="map-info-container">
-
-<div class="row map-div" data-ng-controller="dashboardCtrl">
-	<div class="row col-lg-12" id="dashmap" data-tap-disabled="true"></div>
-    
-    <div class="col-md-4 not-active-map">
-        <div class="info-popout">popout</div>
+<div class="row">
+    <div class="col-lg-3">
+      
+        
+        <div class="chart-container lightblue">
+            <h4 class="chart-title">Groups vs Individuals</h4>
+<div id="amountofpeople" class="morris-chart" style="height: 300px; width: 100%;"></div>
+        </div>
     </div>
-</div>
-
-</div>
+    
+    <div class="col-lg-3">
+      
+        
+        <div class="chart-container lightblue">
+            <h4 class="chart-title">Source of Referrals</h4>
+<div id="test2" class="morris-chart" style="height: 300px; width: 100%;"></div>
+        </div>
+    </div>
+    
+     <div class="col-lg-3">
+      
+        
+        <div class="chart-container lightblue">
+            <h4 class="chart-title">Genders</h4>
+<div id="test" class="morris-chart" style="height: 300px; width: 100%;"></div>
+        </div>
+    </div>
+    
+         <div class="col-lg-3">
+      
+        <div class="hometopbutton">
+            <div class="home-button">
+            <h4 class="home-button-text">
+                <span class="largenumber">201</span>NEW REFERRALS TODAY</h4>
+            </div></div>
+             
+             <div class="hometopbutton">
+            <div class="home-button2">
+            <h4 class="home-button-text">
+                <span class="largenumber">2158</span>TOTAL REFERRALS</h4>
+            </div></div>
+    </div>
+</div>   
 <div id="chartscontainer" data-ng-controller="ChartsCtrl" >
 
 <div class="row">
-    <div class="col-lg-5"><div class="chart-container"><div id="pluralitypercentage" class="pie-chart-pretty" style="width:300px;min-height:230px;"></div></div></div>
-    <div class="col-lg-2"><div id="gendernumber" style="height:100px;"></div></div>
-    <div class="col-lg-5"><div class="chart-container"><div id="genderratio" class="pie-chart-pretty" style="width:300px;min-height:230px;"></div></div></div>
+    <div class="col-lg-8">
+        <div class="chart-container2 lightblue">
+            <h4 class="chart-title">Sheltered vs. Unsheltered</h4>
+        <div id="shelteredgraph"></div>
+        </div>
+    </div>
+    <div class="col-lg-4">test</div>
+</div>
 
+<div id="chartscontainer" data-ng-controller="ChartsCtrl" >
+    
+  <div class="row">
+  <div class="col-lg-12">
+      <div class="large-graph">
+          <h4 class="chart-title2">Hourly Referral Rate
+      </h4>
+      <div id="hourgraph" style="width: 100%; height:300px;">
+      </div>
+  </div></div>
   </div>
-  <div id="hourgraph" style="height:300px;"></div>
-  
-  <div id="districtgraph" style="height:300px;"></div>
-
-</div>
-<div class="row">
-	<div class="col-lg-6">
-	   
-	</div>
-	<div class="col-lg-6">
-		<rd-widget>
-			<rd-widget-header icon="fa-users" title="Users">
-				<input type="text" placeholder="Search" class="form-control input-sm">
-			</rd-widget-header>
-			<rd-widget-body classes="medium no-padding">
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
-						</thead>
-						<tbody>
-							<tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
-							<tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
-							<tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
-						</tbody>
-					</table>
-        		</div>
-			</rd-widget-body>
-		<rd-widget>
-	</rd-widget></rd-widget></div>
+    
+    
+      <div class="row">
+  <div class="col-lg-12">
+      <div class="large-graph"><h4 class="chart-title2">Referrals by Region
+      </h4>
+      <div id="districtgraph" style="width: 100%; height:300px;">
+      </div>
+  </div></div>
+    
+    </div>
+    
+    
 </div>
 
+
 <div class="row">
-	<div class="col-lg-6">
-   		<rd-widget>
-   			<rd-widget-header icon="fa-plus" title="Extras">
-   				<button class="btn btn-sm btn-info">Button</button>
-   			</rd-widget-header>
-   			<rd-widget-body>
-				<div class="message">
-					This is a standard message which will also work the ".no-padding" class, I can also <span class="error">be an error message!</span>
-				</div>
-				<hr>
-				<div class="message">
-					<a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> is included, so you can use <a href="#" tooltip="I'm a tooltip!">tooltips</a> and all of the other native Bootstrap JS components!
-				</div>
-   			</rd-widget-body>
-   		</rd-widget>
-	</div>
-	<div class="col-lg-6">
-		<rd-widget>
-			<rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
-				<a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a>
-			</rd-widget-header>
-			<rd-widget-body>
-				<rd-loading></rd-loading>
-			</rd-widget-body>
-		</rd-widget>
-	</div>
+  <div class="col-lg-6">
+  </div>
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-users" title="Users">
+        <input type="text" placeholder="Search" class="form-control input-sm">
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">ID
+                </th>
+                <th>Username
+                </th>
+                <th>Role
+                </th>
+                <th>Account
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1
+                </td>
+                <td>Joe Bloggs
+                </td>
+                <td>Super Admin
+                </td>
+                <td>AZ23045
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">2
+                </td>
+                <td>Timothy Hernandez
+                </td>
+                <td>Admin
+                </td>
+                <td>AU24783
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">3
+                </td>
+                <td>Joe Bickham
+                </td>
+                <td>User
+                </td>
+                <td>AM23781
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+      <rd-widget>
+      </rd-widget>
+    </rd-widget>
+  </div>
 </div>
+<div class="row">
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-plus" title="Extras">
+        <button class="btn btn-sm btn-info">Button
+        </button>
+      </rd-widget-header>
+      <rd-widget-body>
+        <div class="message">
+          This is a standard message which will also work the ".no-padding" class, I can also 
+          <span class="error">be an error message!
+          </span>
+        </div>
+        <hr>
+        <div class="message">
+          <a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap
+          </a> is included, so you can use 
+          <a href="#" tooltip="I'm a tooltip!">tooltips
+          </a> and all of the other native Bootstrap JS components!
+        </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-lg-6">
+    <rd-widget>
+      <rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
+        <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit
+        </a>
+      </rd-widget-header>
+      <rd-widget-body>
+        <rd-loading>
+        </rd-loading>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
+
+    
+    <script>
+
+        
+window.a = Morris.Donut({
+  element: 'amountofpeople',
+  data: [
+    {value: 22, label: 'Groups'},
+    {value: 75, label: 'Individuals'}
+  ],
+  backgroundColor: '#fff',
+  labelColor: '#060',
+  colors: [
+    '#4f5467',  
+    '#01c0c8'
+  ],
+});
+        $(window).on("resize", function(){
+      a.redraw();
+   });
+        
+        window.b = Morris.Donut({
+  element: 'test2',
+  data: [
+    {value: 30, label: 'Phone'},
+    {value: 15, label: 'Email'},
+    {value: 65, label: 'App'},
+    {value: 5, label: 'Letters'}
+  ],
+  backgroundColor: '#fff',
+  labelColor: '#060',
+  colors: [
+    '#01c0c8',
+    '#00c292',
+    '#fb9678',
+    '#4f5467'
+  ],
+});
+        $(window).on("resize", function(){
+      b.redraw();
+   });
+        
+        
+        window.m = Morris.Donut({
+  element: 'test',
+  data: [
+    {value: 70, label: 'Males'},
+    {value: 82, label: 'Females'}
+  ],
+  backgroundColor: '#fff',
+  labelColor: '#060',
+  colors: [
+    '#00c292',
+    '#4f5467'
+  ],
+});
+        
+       $(window).on("resize", function(){
+      m.redraw();
+   });
+    
+
+        
+window.d = Morris.Area({
+  element: 'shelteredgraph',
+   data: [{
+            period: '10',
+            unsheltered: 59,
+            Sheltered: 30,
+            
+        }, {
+            period: '11',
+            unsheltered: 30,
+            Sheltered: 25,
+            
+        }, {
+            period: '12',
+            unsheltered: 80,
+            Sheltered: 30,
+            
+        }, {
+            period: '13',
+            unsheltered: 100,
+            Sheltered: 83,
+            
+        }, {
+            period: '14',
+            unsheltered: 60,
+            Sheltered: 43,
+            
+        }, {
+            period: '15',
+            unsheltered: 105,
+            Sheltered: 90,
+            
+        },
+         {
+            period: '16',
+            unsheltered: 102,
+            Sheltered: 94,
+           
+        }],
+        xkey: 'period',
+        ykeys: ['unsheltered', 'Sheltered'],
+        labels: ['Unsheltered', 'Sheltered'],
+        pointSize: 0,
+        fillOpacity: 0.5,
+        pointStrokeColors:['#b4becb', '#00c292'],
+        behaveLikeLine: true,
+        gridLineColor: '#e0e0e0',
+        lineWidth: 0,
+        smooth: false,
+        hideHover: 'auto',
+        lineColors: ['#b4becb', '#00c292'],
+        resize: true
+   });
+    </script>

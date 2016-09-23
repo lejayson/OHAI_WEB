@@ -1,11 +1,12 @@
 body {
 font-family: 'lato', sans-serif;
-background: #f1f4f5 !important;
+background: #edf1f5 !important;
+
 }
 
 
 #content-wrapper {
-    background-color: #f1f4f5;
+    background-color: #edf1f5;
 }
 
 #sidebar-wrapper {
@@ -85,6 +86,35 @@ ul.sidebar .sidebar-list .menu-icon {
     height: 500px;
     overflow: hidden;
     padding-left: 0px;
+}
+#addrefmap {
+    width: 100%;
+	height: 300px;
+}
+.controls {
+margin-top: 10px;
+border: 1px solid transparent;
+border-radius: 2px 0 0 2px;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+height: 32px;
+outline: none;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#searchinput {
+background-color: #fff;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 300;
+margin-left: 12px;
+padding: 0 11px 0 13px;
+text-overflow: ellipsis;
+width: 300px;
+}
+
+#searchinput:focus {
+border-color: #4d90fe;
 }
 .content.ng-scope {
     padding: 20px;
@@ -572,6 +602,129 @@ button:focus {
 .chart-container {
     margin:0 auto;
     background-color: #fff;
-    padding: 35px;
+    padding: 25px;
+    border-radius: 3px;
+}
+
+.graphnumber {
+    display: inline-block;
+    float: right;
+    color: #fff;
+    font-size: 2.5em;
+    margin-top:-10px;
+    font-weight: 300;
+    height:15px;
+}
+
+.lightblue {
+    background-color: #fff;
+}
+
+.mediumblue {
+    background-color: #fff;
+}
+
+.darkblue {
+    background-color: #fff;
+}
+
+h4.chart-title {
+    color: #000;
+    font-size: 1.5em;
+    margin-top: 0px;
+}
+
+.large-graph {
+    margin-top: 15px;
+    padding:35px;
+    width: 100%;
+    overflow:hidden;
+    background-color: #ffffff;
+}
+
+div#hourgraph {
+    overflow: hidden;
+}
+
+div#districtgraph {
+    overflow: hidden;
+}
+
+div#dashmap {
+    margin-bottom: 0px;
+}
+
+h4.chart-title {
+    color: #00c292;
+    text-transform: uppercase;
+    margin-top: 0px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#graph {
+  flex: 1;
+}
+
+svg {
+    width: 100%;
+}
+
+svg text{ 
+      color: #000 !important;
+      fill: #64697a !important;
+}
+
+tspan {
+    font-weight: 300;
+    font-family: 'Lato', san-serif;
+    letter-spacing: -.05em;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.new-referrals-counter {
+    width: 100%;
+    background-color: #01c0c8;
+    height: 50%;
+}
+
+.home-button {
+    height: 180px;
+    background-color: #00c292;
+    padding: 25px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.home-button2 {
+    height: 180px;
+    background-color: #fb9678;
+    padding: 25px;
+    color: #fff;
+}
+
+h4.home-button-text {
+    margin-top: 47px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 1.2em;
+}
+
+.largenumber {
+    display:block;
+    font-size:3.3em;
+    font-weight: 300;
+    font-family: 'lato', sans-serif;
+    margin-bottom: 7px;
+}
+
+.chart-container2 {
+    margin-top: 15px !important;
+        margin:0 auto;
+    background-color: #fff;
+    padding: 25px;
     border-radius: 3px;
 }
