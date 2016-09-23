@@ -4,109 +4,31 @@
       <h4 class="event-title">List of Events
       </h4>
       <div class="form-group">
-        <input type="date" class="form-control" name="date" placeholder="Event Date" autocomplete="off">
+        <input type="date" class="form-control" name="date" placeholder="Event Date" value="2016-09-14" autocomplete="off">
       </div>
-      <ul class="list-group list-group-full">
-        <li class="list-group-item event-list">
-          <div class="media">
-            <div class="event-edit-buttons">
-              <i class="icon ion-edit  event-edit">
-              </i> 
-              <i class="icon ion-trash-a  event-edit">
-              </i>
+      <ul class="list-group list-group-full" ng-controller="eventCtrl">
+        <div ng-repeat="event in eventlist">
+          <li class="list-group-item event-list">
+            <div class="media">
+              <div class="event-edit-buttons">
+                <i class="icon ion-edit  event-edit">
+                </i> 
+                <i class="icon ion-trash-a  event-edit" ng-click="testAlert()">
+                </i>
+              </div>
+              <div class="media-body event-item">
+                <h4 class="event-heading">{{event.location}}
+                </h4>
+                <p class="event-sub">{{event.eventdate}}
+                </p>
+                <p class="event-sub">{{event.starttime}} - {{event.endtime}}
+                </p>
+                <p class="event-desc">{{event.description}}
+                </p>
+              </div>
             </div>
-            <div class="media-body event-item">
-              <h4 class="event-heading">Charity Fundraiser
-              </h4>
-              <p class="event-sub">8:00am - 12:00pm
-              </p>
-              <p class="event-sub">400 Farrington Hwy, Kapolei, HI 96707
-              </p>
-              <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada. Aliquam tincidunt rhoncus ligula, a gravida ante. Ut facilisis faucibus eleifend. Ut feugiat nulla eget egestas consectetur. Cras placerat eleifend porta. Duis ac lacus at justo lobortis aliquet. Proin a tristique erat. Curabitur vitae urna id nisi pulvinar egestas nec at nulla. Donec hendrerit tellus nec placerat facilisis.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item event-list">
-          <div class="media">
-            <div class="event-edit-buttons">
-              <i class="icon ion-edit  event-edit">
-              </i> 
-              <i class="icon ion-trash-a  event-edit">
-              </i>
-            </div>
-            <div class="media-body event-item">
-              <h4 class="event-heading">Charity Fundraiser
-              </h4>
-              <p class="event-sub">8:00am - 12:00pm
-              </p>
-              <p class="event-sub">400 Farrington Hwy, Kapolei, HI 96707
-              </p>
-              <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada. Aliquam tincidunt rhoncus ligula, a gravida ante. Ut facilisis faucibus eleifend. Ut feugiat nulla eget egestas consectetur. Cras placerat eleifend porta. Duis ac lacus at justo lobortis aliquet. Proin a tristique erat. Curabitur vitae urna id nisi pulvinar egestas nec at nulla. Donec hendrerit tellus nec placerat facilisis.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item event-list">
-          <div class="media">
-            <div class="event-edit-buttons">
-              <i class="icon ion-edit  event-edit">
-              </i> 
-              <i class="icon ion-trash-a  event-edit">
-              </i>
-            </div>
-            <div class="media-body event-item">
-              <h4 class="event-heading">Charity Fundraiser
-              </h4>
-              <p class="event-sub">8:00am - 12:00pm
-              </p>
-              <p class="event-sub">400 Farrington Hwy, Kapolei, HI 96707
-              </p>
-              <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada. Aliquam tincidunt rhoncus ligula, a gravida ante. Ut facilisis faucibus eleifend. Ut feugiat nulla eget egestas consectetur. Cras placerat eleifend porta. Duis ac lacus at justo lobortis aliquet. Proin a tristique erat. Curabitur vitae urna id nisi pulvinar egestas nec at nulla. Donec hendrerit tellus nec placerat facilisis.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item event-list">
-          <div class="media">
-            <div class="event-edit-buttons">
-              <i class="icon ion-edit  event-edit">
-              </i> 
-              <i class="icon ion-trash-a  event-edit">
-              </i>
-            </div>
-            <div class="media-body event-item">
-              <h4 class="event-heading">Charity Fundraiser
-              </h4>
-              <p class="event-sub">8:00am - 12:00pm
-              </p>
-              <p class="event-sub">400 Farrington Hwy, Kapolei, HI 96707
-              </p>
-              <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada. Aliquam tincidunt rhoncus ligula, a gravida ante. Ut facilisis faucibus eleifend. Ut feugiat nulla eget egestas consectetur. Cras placerat eleifend porta. Duis ac lacus at justo lobortis aliquet. Proin a tristique erat. Curabitur vitae urna id nisi pulvinar egestas nec at nulla. Donec hendrerit tellus nec placerat facilisis.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item event-list">
-          <div class="media">
-            <div class="event-edit-buttons">
-              <i class="icon ion-edit  event-edit">
-              </i> 
-              <i class="icon ion-trash-a  event-edit">
-              </i>
-            </div>
-            <div class="media-body event-item">
-              <h4 class="event-heading">Charity Fundraiser
-              </h4>
-              <p class="event-sub">8:00am - 12:00pm
-              </p>
-              <p class="event-sub">400 Farrington Hwy, Kapolei, HI 96707
-              </p>
-              <p class="event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada. Aliquam tincidunt rhoncus ligula, a gravida ante. Ut facilisis faucibus eleifend. Ut feugiat nulla eget egestas consectetur. Cras placerat eleifend porta. Duis ac lacus at justo lobortis aliquet. Proin a tristique erat. Curabitur vitae urna id nisi pulvinar egestas nec at nulla. Donec hendrerit tellus nec placerat facilisis.
-              </p>
-            </div>
-          </div>
-        </li>
+          </li>
+        </div>
       </ul>
     </div>
   </div>
@@ -120,7 +42,7 @@
             <input type="text" class="form-control" name="email" placeholder="Event Name" autocomplete="off">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Event Location" autocomplete="off">
+            <input type="text" class="form-control" name="location" placeholder="Event Location" autocomplete="off">
           </div>
           <div class="form-group">
             <input type="date" class="form-control" name="date" placeholder="Event Date" autocomplete="off">
