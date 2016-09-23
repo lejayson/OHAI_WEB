@@ -1,13 +1,13 @@
 
-<div class="login-page">
+<div class="login-page" data-ng-controller="loginCtrl">
   <div class="form">
    <span class="loginheader">OHAI</span>
       <p class="logintext">ADMIN DASHBOARD</p>
       <br>
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
+      <input type="text" placeholder="username" ng-model="userloginname" ng-blur="loginusername(userloginname)"/>
+      <input type="password" placeholder="password" ng-model="userloginpassword" ng-blur="loginpassword(userloginpassword)"/>
+      <button class="button button-block button-clam" ng-click="loginform()">login</button>
     </form>
   </div>
 </div>
