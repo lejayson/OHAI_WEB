@@ -1,5 +1,97 @@
-<div class="responder-page">
+<div class="responder-page" data-ng-controller="coordinatorsCtrl">
    <div class="panel responder">
+   
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+		<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Assigned Referrals</h4>
+		</div>
+		<div class="modal-body">
+		<div ng-repeat="list in assignedReferals">
+		<p>{{list.name}}</p>
+		<p>{{list.referdate}}</p>
+		</div>
+		</div>
+      <div class="modal-footer">
+	  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="addResp" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+		<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Responders</h4>
+		</div>
+		<div class="modal-body">
+		<form name="myForm" novalidate>
+	  
+			<label>
+				District:
+				<input placeholder="##" type="number" name="respDistrict" ng-model="newResponder.district" required>
+				<span style="color:red" ng-show="myForm.respDistrict.$dirty && myForm.respDistrict.$invalid">
+				<span ng-show="myForm.respDistrict.$error.required">District is required.</span>
+				</span>
+			</label>
+			<label>
+				Name:
+				<input placeholder="John Doe" type="text" name="respName" ng-model="newResponder.name" required>
+				<span style="color:red" ng-show="myForm.respName.$dirty && myForm.respName.$invalid">
+				<span ng-show="myForm.respName.$error.required">Name is required.</span>
+				</span>
+			</label>
+			<label>
+				Roles:
+				<input type="radio" name="respRole" ng-model="newResponder.role" value="1" ng-required="!newResponder.role">Responder
+				<input type="radio" name="respRole" ng-model="newResponder.role" value="2" ng-required="!newResponder.role">Coordinator
+				<input type="radio" name="respRole" ng-model="newResponder.role" value="3" ng-required="!newResponder.role">Admin
+			</label>
+			<label>
+				Phone Number:
+				<input placeholder="###-###-####" type="text" name="respPhone" ng-model="newResponder.phone" required>
+				<span style="color:red" ng-show="myForm.respPhone.$dirty && myForm.respPhone.$invalid">
+				<span ng-show="myForm.respPhone.$error.required">Phone is required.</span>
+				</span>
+			</label>
+			<label>
+				Email:
+				<input placeholder="email@example.com" type="email" name="respEmail" ng-model="newResponder.email" required>
+				<span style="color:red" ng-show="myForm.respEmail.$dirty && myForm.respEmail.$invalid">
+				<span ng-show="myForm.respEmail.$error.required">Email is required.</span>
+				</span>
+			</label>
+			<label>
+				Address:
+				<input placeholder="Enter full address here" type="text" name="respAdr" ng-model="newResponder.address" required>
+				<span style="color:red" ng-show="myForm.respAdr.$dirty && myForm.respAdr.$invalid">
+				<span ng-show="myForm.respAdr.$error.required">Address is required.</span>
+				</span>
+			</label>
+	  </form>
+		</div>
+      <div class="modal-footer">
+		<button ng-submit="addNewReferal()" ng-disabled="myForm.$invalid" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+   
+   
+   
       <form class="page-search-form" role="search">
          <div class="input-search input-search-dark">
            
@@ -7,13 +99,13 @@
          </div>
       </form>
       <ul class="nav nav-tabs nav-tabs-line" data-plugin="nav-tabs" role="tablist">
-         <li class="active" role="presentation"><a href="/#">All Responders</a></li>
-         <li><a href="/#">Active Responders</a></li>
-         <li><a href="/#">Not Active</a></li>
-          <li class="add-responder"><a class="new-responder" href="/#"><i class="icon ion-plus add-new"></i>Add New Responder</a></li>
+         <li class="active" role="presentation"><a href="">All Responders</a></li>
+         <li><a href="">Active Responders</a></li>
+         <li><a href="">Not Active</a></li>
+          <li class="add-responder"><a class="new-responder" data-toggle="modal" data-target="#addResp"><i class="icon ion-plus add-new"></i>Add New Responder</a></li>
       </ul>
       <div class="responder-content">
-         <li class="responder-list">
+         <li ng-repeat="list in coordrpLists" class="responder-list">
             <div class="media">
                <div class="media-left responder-image">
                   <div class="responder-avatar">
@@ -23,20 +115,20 @@
                </div>
                <div class="media-body responder-info">
                   <h4 class="responder-name">
-                     Herman Beck
-                      <small>Institute of Human Services</small>
+					{{list.respondername}}	
+					<small>Institute of Human Services</small>
                   </h4>
-                  <p><i class="icon ion-location responder-icon"></i>          DISTRICT 13
+                  <p><i class="icon ion-location responder-icon"></i>DISTRICT {{list.districtid}}
                   </p>
                    
-                   <p><i class="icon ion-ios-telephone responder-icon"></i>239.239.1820
+                   <p><i class="icon ion-ios-telephone responder-icon"></i> {{list.phonenum}}
                   </p>
                    
-                   <p><i class="icon ion-email responder-icon"></i>          hisemail@gmail.com
+                   <p><i class="icon ion-email responder-icon"></i> {{list.email}}
                   </p>
                </div>
                <div class="media-right responder-active">
-                  <button type="button" class="btn btn-outline btn-success btn-sm responder-button">Current Active Referrals</button>
+                  <button type="button" data-toggle="modal" data-target="#myModal" ng-click="getAssignedref(list.idnum)" class="btn btn-outline btn-success btn-sm responder-button">Current Active Referrals</button>
                </div>
             </div>
          </li>

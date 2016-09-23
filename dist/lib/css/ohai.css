@@ -91,6 +91,10 @@ ul.sidebar .sidebar-list .menu-icon {
     width: 100%;
 	height: 300px;
 }
+#referralmap {
+    width: 100%;
+	height: 500px;
+}
 .controls {
 margin-top: 10px;
 border: 1px solid transparent;
