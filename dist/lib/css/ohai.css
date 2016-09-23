@@ -539,7 +539,7 @@ button:focus {
     width: 100%;
     margin: 0 auto;
     height: auto;
-    top: 40%;
+    top: 10%;
     position: inherit;
 }
 
@@ -552,20 +552,24 @@ button:focus {
 
 .map-div {
     padding-left: 15px;
-    padding-right: 15px;
     overflow: hidden;
 }
 
 .active-map {
     height: 500px;
-    background-color: #ddd;
-    position: absolute;
+    background-color: #17373f;
+    margin-left: 15px;
+    margin-right: -15px;
 }
 
 .not-active-map {
     left: -1000px;
 }
 
+.info-popout {
+    color: #eee;
+    padding: 25px;
+}
 
 .infowindow-name {
     font-size: 1.4em;
@@ -727,4 +731,58 @@ h4.home-button-text {
     background-color: #fff;
     padding: 25px;
     border-radius: 3px;
+}
+
+.responder-list {
+    padding: 3px;
+    padding-left: 15px;
+    border: none;
+    font-size: 1.2em;
+}
+
+.responderlist-add {
+    color: dimgrey;
+    padding-left: 10px;
+}
+
+input[type="radio"] {
+    margin-top: 6px;
+}
+
+.confirm-button {
+    background-color: #00c292;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.cancel-button {
+    background-color: #01c0c8;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.referral-lists {
+    height: 220px;
+}
+
+.referral-image {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 15px;
+}
+
+.referral-avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.referral-img {
+    width: 100%;
+}
+
+.referral-assign {
+    padding-top: 10px;
 }
