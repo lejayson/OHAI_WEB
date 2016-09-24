@@ -347,7 +347,6 @@ h4.event-heading {
 }
 
 .event-list:last-child {
-    border-bottom: 0px;
     padding-bottom: 0px;
 }
 
@@ -841,4 +840,26 @@ p.new-population-p {
     padding-left: 20px;
     padding-top: 4px;
     padding-bottom: 4px;
+}
+
+.volunteer-button {
+    background-color: transparent;
+    border: 0px;
+    color: #aaacb5;
+}
+
+.volunteering-list {
+    height: 441px;
+    width: 50%;
+    display: inline-block;
+    float: left;
+    padding: 25px;
+    background-color: #fb9678;
+    color: #fff;
+}
+
+.volunteer-emailblast {
+    height: 100%;
+    width: 50%;
+    display:inline-block;
 }

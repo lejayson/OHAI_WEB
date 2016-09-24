@@ -1,3 +1,63 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Event Volunteers</h4>
+      </div>
+	 
+          
+          
+          <div class="volunteering-list">test
+          </div>
+          
+          <div class="volunteer-emailblast">
+              
+              <div class="createnewevent">
+      <h4 class="event-title">SEND EMAIL BLAST
+      </h4>
+      <div class="example">
+        <form class="">
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Event Name" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="location" placeholder="Event Location" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control" name="date" placeholder="Event Date" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="time" class="form-control" name="time" placeholder="Event Time" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Event Description">
+            </textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox-custom checkbox-default">
+              <input type="checkbox" id="checkbox" class="regular-checkbox" />
+              <label for="inputCheckboxAgree">Volunteering Available
+              </label>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary event-submit">Submit
+          </button>
+        </form>
+      </div>
+    </div>
+              
+          </div>
+          
+     
+    </div>
+  </div>
+</div>
+
+
+
 <div class="row">
   <div class="col-lg-8">
     <div class="createnewevent">
@@ -11,6 +71,7 @@
           <li class="list-group-item event-list">
             <div class="media">
               <div class="event-edit-buttons">
+                <button ng-click="delPopup($index)"  data-toggle="modal" data-target="#myModal" class="volunteer-button">Volunteers</button>
                 <i class="icon ion-edit  event-edit">
                 </i> 
                 <i class="icon ion-trash-a  event-edit" ng-click="testAlert()">
@@ -25,6 +86,7 @@
                 </p>
                 <p class="event-desc">{{event.description}}
                 </p>
+                  
               </div>
             </div>
           </li>
