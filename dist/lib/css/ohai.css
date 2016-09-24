@@ -737,13 +737,6 @@ h4.home-button-text {
     border-radius: 3px;
 }
 
-.responder-list {
-    padding: 3px;
-    padding-left: 15px;
-    border: none;
-    font-size: 1.2em;
-}
-
 .responderlist-add {
     color: dimgrey;
     padding-left: 10px;
@@ -768,7 +761,7 @@ input[type="radio"] {
 }
 
 .referral-lists {
-    height: 220px;
+    height: 260px;
 }
 
 .referral-image {
@@ -789,4 +782,63 @@ input[type="radio"] {
 
 .referral-assign {
     padding-top: 10px;
+}
+
+.vispdat-button {
+    background-color: #00c292;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+    margin-top: 10px;
+    margin-right: 6px;
+    padding-left: 6px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+.vispdat-button:hover, .vispdat-button:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+.moreinfo-button {
+    background-color: #01c0c8;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+    margin-top: 10px;
+}
+
+.new-population {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #505050;
+}
+
+p.new-population-p {
+    color: #00c292;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.new-pop-radio {
+    padding-right: 20px;
+    padding-left: 7px;
+}
+
+.margin-top {
+  margin-top: 25px;  
+} 
+
+.responder-list-ref {
+    border: 0px;
+    text-decoration: none;
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
