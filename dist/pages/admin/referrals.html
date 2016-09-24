@@ -35,7 +35,6 @@
 			<div class="radio responder-list">
 			<label ng-repeat="list in respgLists"><input type="radio" name="optradio" ng-click="AssignRespID(list.idnum)"><span class="responderlist-add">{{list.idnum}} {{list.respondername}}</span></label>
 			</div>
-			<p>{{respID}}</p>
 		</div>
 		<div class="modal-footer">
 			<button ng-click="ConfirmAssign()" type="button" class="btn btn-default confirm-button" data-dismiss="modal">Confirm</button>
