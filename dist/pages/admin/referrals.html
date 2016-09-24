@@ -35,7 +35,6 @@
 			<div class="radio">
 			<label ng-repeat="list in respgLists"><div class="responderlist-radios"><input type="radio" name="optradio" ng-click="AssignRespID(list.idnum)"><span class="responderlist-add"><span class="list-idnumber">{{list.idnum}}</span>  {{list.respondername}}</span></div></label>
 			</div>
-			<p>{{respID}}</p>
 		</div>
 		<div class="modal-footer">
 			<button ng-click="ConfirmAssign()" type="button" class="btn btn-default confirm-button" data-dismiss="modal">Confirm</button>
@@ -272,7 +271,6 @@ Description:
                     <i class="icon ion-person  event-edit">
                     </i>
                   </button>   
-
                   <button ng-click="delPopup($index)"  data-toggle="modal" data-target="#myModal"  class="icon-button">
                     <i class="icon ion-trash-a event-edit">
                     </i>

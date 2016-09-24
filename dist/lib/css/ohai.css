@@ -901,6 +901,7 @@ p.new-population-p {
     padding: 25px;
     background-color: #fb9678;
     color: #fff;
+	overflow-y: scroll;
 }
 
 .volunteer-emailblast {
@@ -943,4 +944,8 @@ p.new-population-p {
 .cancel-button:hover {
     background-color: #244248;
     color: #fff;
+}
+
+.active-dash {
+	margin-top: 15px;
 }

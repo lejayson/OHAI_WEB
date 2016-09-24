@@ -1,5 +1,5 @@
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog" ng-controller="eventCtrl">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -10,7 +10,8 @@
 	 
           
           
-          <div class="volunteering-list">test
+          <div class="volunteering-list">
+		  <div ng-repeat="list in emaillist">{{list.email}}</div>
           </div>
           
           <div class="volunteer-emailblast">
