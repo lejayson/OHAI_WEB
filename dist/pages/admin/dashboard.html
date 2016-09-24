@@ -8,18 +8,21 @@
     </uib-alert>
   </div>
 </div>
+<div data-ng-controller="dashboardCtrl">
 <div class="map-info-container">
     <div class="row">
     <div class="col-lg-2 active-map">
-      <div class="info-popout">popout
+      <div id="info-popout" class="info-popout">{{Records.length}}
       </div>
     </div>
     <div class="row col-lg-10">
-  <div class="row map-div" data-ng-controller="dashboardCtrl">
+  <div class="row map-div">
     <div class="row col-lg-12" id="dashmap" data-tap-disabled="true">
     </div>
-        </div></div>
-    </div></div>
+        </div>
+		</div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-lg-3">
@@ -27,7 +30,7 @@
         
         <div class="chart-container lightblue">
             <h4 class="chart-title">Groups vs Individuals</h4>
-<div id="amountofpeople" class="morris-chart" style="height: 300px; width: 100%;"></div>
+			<div id="amountofpeople" class="morris-chart" style="height: 300px; width: 100%;"></div>
         </div>
     </div>
     
@@ -202,9 +205,9 @@
     </rd-widget>
   </div>
 </div>
-
+</div>
     
-    <script>
+<script>
 
         
 window.a = Morris.Donut({
