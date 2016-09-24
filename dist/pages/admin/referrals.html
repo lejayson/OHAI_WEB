@@ -1,266 +1,349 @@
 <!-- Trigger the modal with a button -->
 <div data-ng-controller="ReferalCtrl">
 <div id="referralmap" data-tap-disabled="true"></div>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Confirm Deletion</h4>
-      </div>
-      <div class="modal-body">
-	  <h4 class="modal-title">{{confirmDel.name}}</h4>
-	  <p>{{confirmDel.id}}</p>
-        <p>{{confirmDel.referdate}}</p>
-      </div>
-      <div class="modal-footer">
-		<button ng-click="removeMarker(confirmDel.id)" type="button" class="btn btn-default" data-dismiss="modal">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-<div id="assignResponder" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Confirm Deletion</h4>
-      </div>
-      <div class="modal-body"
-	  <h4 class="modal-title">Responders</h4>
-	  <div ng-repeat="list in respgLists">
-	  <p>{{list.id}}</p>
-        <p>{{list.respondername}}</p>
-      </div>
-	  </div>
-      <div class="modal-footer">
-	  <button ng-click="removeMarker(confirmDel.id)" type="button" class="btn btn-default" data-dismiss="modal">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;
+          </button>
+          <h4 class="modal-title">Confirm Deletion
+          </h4>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title">{{confirmDel.name}}
+          </h4>
+          <p>{{confirmDel.id}}
+          </p>
+          <p>{{confirmDel.referdate}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button ng-click="removeMarker(confirmDel.id)" type="button" class="btn btn-default" data-dismiss="modal">Delete
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+          </button>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
-    
-    
-    
-<div id="assignResponder" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Please Select a Responder</h4>
-      </div>
-      <div class="modal-body">
-	  <div ng-repeat="list in respgLists">
-	 <div class="radio responder-list">
-         
-         
-         
-  <label><input type="radio" name="optradio"><span class="responderlist-add">{{list.id}} {{list.respondername}}</span></label>
-</div>
-      </div>
-	  </div>
-      <div class="modal-footer">
-		<button ng-click="" type="button" class="btn btn-default confirm-button" data-dismiss="modal">Confirm</button>
-        <button type="button" class="btn btn-default cancel-button" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-<div id="addNewReferal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Create New Referal</h4>
-      </div>
-      <div class="modal-body">
-	  <input id="searchinput" class="controls" type="text" placeholder="Search Box">
-	  <div id="addrefmap"></div>
-	  <form name="myForm" novalidate>
-		<label>
-			Population:
-			<input type="radio" ng-model="newReferal.isgroup" value="0" ng-required="!newReferal.isgroup">Individual
-			<input type="radio" ng-model="newReferal.isgroup" value="1" ng-required="!newReferal.isgroup">Group
-		</label>
-	  
-	  <div ng-switch="newReferal.isgroup">
-		  <div ng-switch-when="0">
-			<label>
-				Name:
-				<input placeholder="John Doe" type="text" name="refName" ng-model="newReferal.name" required>
-				<span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
-				<span ng-show="myForm.refName.$error.required">Username is required.</span>
-				</span>
-			</label>
-			<label>
-				Gender:
-				<input type="radio" name="refGender" ng-model="newReferal.gender" value="F" ng-required="!newReferal.gender">Female
-				<input type="radio" name="refGender" ng-model="newReferal.gender" value="M" ng-required="!newReferal.gender">Male
-			</label>
-			<label>
-				Environment:
-				<input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="i" ng-required="!newReferal.environment">Indoors
-				<input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="o" ng-required="!newReferal.environment">Outdoors
-			</label>
-			<label>
-			   Description:
-			   <input type="textarea" placeholder="Enter Descriptions Here!" name="refDescription" ng-model="newReferal.description" required>
-			   <span style="color:red" ng-show="myForm.refDescription.$dirty && myForm.refDescription.$invalid">
-				<span ng-show="myForm.refDescription.$error.required">Decription is required.</span>
-				</span>
-			</label>
-		  </div>
-		  <div ng-switch-when="1">
-			 <label>
-			   Child:
-				<input type="text" name="refChildren" ng-model="newReferal.child" required>
-				<span style="color:red" ng-show="myForm.refChildren.$dirty && myForm.refChildren.$invalid">
-				<span ng-show="myForm.refChildren.$error.required">Number of children is required.</span>
-				</span>
-			</label>
-			<label>
-			   Adult:
-				<input type="text" name="refAdult" ng-model="newReferal.adult" required>
-				<span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
-				<span ng-show="myForm.refName.$error.required">Number of adult is required.</span>
-				</span>
-			</label>
-			<label>
-				Environment:
-				<input type="radio" ng-model="newReferal.environment" value="i" ng-required="!newReferal.environment">Indoors
-				<input type="radio" ng-model="newReferal.environment" value="o" ng-required="!newReferal.environment">Outdoors
-			</label>
-			<label>
-			   Description:
-			   <input type="text" name="refDescription" ng-model="newReferal.description" required>
-			   <span style="color:red" ng-show="myForm.refDescription.$dirty && myForm.refDescription.$invalid">
-				<span ng-show="myForm.refDescription.$error.required">Decription is required.</span>
-				</span>
-			</label>
-		  </div>
-		</div>
-	  <p>{{newReferal}}</p>
-	  </form>
-	  </div>
-      <div class="modal-footer">
-		<button ng-submit="addNewReferal()" ng-disabled="myForm.$invalid" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="row">
-
-  <div class="col-lg-10">
-    
-      <div class="col-md-12">
-      <form class="page-search-form ng-pristine ng-valid" role="search">
-         <div class="input-search input-search-dark referralsearch">
-           
-            <input ng-model="searchString" type="text" class="form-control white-bg" id="inputSearch" name="search" placeholder="Search Users">
-         </div>
-      </form>
-      </div>
-    <div ng-repeat="list in refpgLists | searchFor:searchString" class="col-sm-6 padding-top referral-lists">
-      <li class="list-group-item referral-tile">
-        <div class="media">
-          <div class="media event-item">
-            <div class="media-left referral-image">
-                  <div class="referral-avatar">
-                     <img class="referral-img" src="{{list.imgurl}}">
-                  </div>
-               </div>
-            <div class="media-body"> 
-              <div class="event-edit-buttons referral-edit">
-				<button ng-click="AssignResp($index)" data-toggle="modal" data-target="#assignResponder" class="icon-button"><i class="icon ion-person  event-edit"></i></button>   
-                  
-                  <button ng-click="testPopup($index)" data-toggle="modal" data-target="#myModal"  class="icon-button"><i class="icon ion-trash-a event-edit"></i></button>    
-
-			</div>
-              
-    
-    
-              <h4 class="referral-name">{{list.name}}
-              </h4> 
-              <p>
-                <span class="referral-info">PEOPLE
-                </span> {{list.adults}} Adult  ||  {{list.children}} Child
-              </p>
-              <p>
-                <span class="referral-info">DATE
-                </span> {{list.referdate}}
-              </p>
-			  <p>
-                <span class="referral-info">ID
-                </span> {{list.id}}
-              </p>
+  <div id="assignResponder" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;
+          </button>
+          <h4 class="modal-title">Please Select a Responder
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div ng-repeat="list in respgLists">
+            <div class="radio responder-list-ref">
+              <label>
+                <input type="radio" name="optradio">
+                <span class="responderlist-add">{{list.id}} {{list.respondername}}
+                </span>
+              </label>
             </div>
-            <p class="referral-assign">
-                <span class="referral-info">ASSIGNED TO
-                </span><span class="referral-responder"></span>
-              </p>
-            <p class="referral-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada.
-            </p>
           </div>
         </div>
-      </li>
-    </div>
-  </div> 
+        <div class="modal-footer">
+          <button ng-click="" type="button" class="btn btn-default confirm-button" data-dismiss="modal">Confirm
+          </button>
+          <button type="button" class="btn btn-default cancel-button" data-dismiss="modal">Cancel
+          </button>
+        </div>
 
-    
-<!---
-  <div class="grid">
-  <div class="grid-sizer"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2 grid-item--height2"></div>
-  <div class="grid-item grid-item--height3"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item grid-item--width3"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item grid-item--width2 grid-item--height3"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2 grid-item--height2"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height3"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-</div>
-    
---->    
-    
-  <div class="col-lg-2">
-    <div class="referralsidemenu">
-        <button class="refsidebutton greenshade" ng-click="createrefMap()" data-toggle="modal" data-target="#addNewReferal"><h4 class="referral-buttontext"><icon class="icon ion-plus referralicon"></icon>New Referral</h4></button>
-        <button class="refsidebutton blue1"><h4 class="referral-buttontext">All Referrals</h4></button>
-		<button class="refsidebutton blue2"><h4 class="referral-buttontext">Active Referrals</h4></button>
+      </div>
     </div>
   </div>
-</div>
+  <div id="addNewReferal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;
+          </button>
+          <h4 class="modal-title">Create New Referal
+          </h4>
+        </div>
+        <div class="modal-body">
+          <input id="searchinput" class="controls" type="text" placeholder="Search Box">
+          <div id="addrefmap">
+          </div>
+          <form name="myForm" novalidate>
+            <label>
+              <div class="new-population">
+                <p class="new-population-p">
+                  Population
+                </p>
+                <input type="radio" ng-model="newReferal.isgroup" value="0" ng-required="!newReferal.isgroup">
+                <span class="new-pop-radio">Individual
+                </span>
+                <input type="radio" ng-model="newReferal.isgroup" value="1" ng-required="!newReferal.isgroup">
+                <span class="new-pop-radio">Group
+                </span>
+              </div>
+            </label>
+            <div ng-switch="newReferal.isgroup">
+              <div ng-switch-when="0">
+                <form class="ng-pristine ng-valid"> 
+                  <div class="form-group"> 
+                    <label for="name">Name
+                    </label> 
+                    <input class="form-control" placeholder="John Doe" type="text" name="refName" ng-model="newReferal.name" required>
+                    <span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
+                      <span ng-show="myForm.refName.$error.required">Name is required.
+                      </span>
+                    </span>
+                  </div> 
+                  <div class="form-group">
+                    <div id="gender" class="btn-group" data-toggle="buttons">  
+                      <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refGender" ng-model="newReferal.gender" value="M" ng-required="!newReferal.gender"> &nbsp; Male &nbsp;
+                      </label>
+                      <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refGender" ng-model="newReferal.gender" value="F" ng-required="!newReferal.gender"> Female
+                      </label>
+                    </div>
+                    &nbsp;&nbsp;
+                    <div id="gender" class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="i" ng-required="!newReferal.environment"> &nbsp; Indoors &nbsp;
+                      </label>
+                      <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="o" ng-required="!newReferal.environment"> Outdoors
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <label for="description">Description
+                    </label> 
+                    <textarea class="form-control" rows="7" input type="textarea" placeholder="Enter Descriptions Here!" name="refDescription" ng-model="newReferal.description" required>
+                    </textarea> 
+                    <span style="color:red" ng-show="myForm.refDescription.$dirty && myForm.refDescription.$invalid">
+                      <span ng-show="myForm.refDescription.$error.required">Decription is required.
+                      </span>
+                    </span>
+                  </div>  
+                </form>
+                <div class="form-group">
+                  <label for="Source">Source of Referral
+                  </label>
+                  <select id="heard" class="form-control" required="">
+                    <option value="">Choose..
+                    </option>
+                    <option value="Email">Email
+                    </option>
+                    <option value="Letter">Letter
+                    </option>
+                    <option value="PhoneCall">Phone Call
+                    </option>
+                  </select>
+                </div>
+                <div class="checkbox"> 
+                  <label> 
+                    <input type="checkbox"> I confirm all of the above data is correct. 
+                  </label> 
+                </div> 
+                <!--      
+<p><label>
+Name:
+<input placeholder="John Doe" type="text" name="refName" ng-model="newReferal.name" required>
+<span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
+<span ng-show="myForm.refName.$error.required">Username is required.</span>
+</span>
+</label></p>
+<p><label>
+Gender:
+<input type="radio" name="refGender" ng-model="newReferal.gender" value="F" ng-required="!newReferal.gender">Female
+<input type="radio" name="refGender" ng-model="newReferal.gender" value="M" ng-required="!newReferal.gender">Male
+</label></p>
+<p><label>
+Environment:
+<input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="i" ng-required="!newReferal.environment">Indoors
+<input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="o" ng-required="!newReferal.environment">Outdoors
+</label></p>
+<p><label>
+Description:
+<input type="textarea" placeholder="Enter Descriptions Here!" name="refDescription" ng-model="newReferal.description" required>
+<span style="color:red" ng-show="myForm.refDescription.$dirty && myForm.refDescription.$invalid">
+<span ng-show="myForm.refDescription.$error.required">Decription is required.</span>
+</span>
+</label></p>
+-->
+              </div>  
+              <div ng-switch-when="1">
+                <form class="ng-pristine ng-valid"> 
+                  <div class="form-group"> 
+                    <label for="name">Names
+                    </label> 
+                    <input class="form-control" placeholder="John Doe" type="text" name="refName" ng-model="newReferal.name" required>
+                    <span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
+                      <span ng-show="myForm.refName.$error.required">Name is required.
+                      </span>
+                    </span>
+                  </div> 
+                  <form class="ng-pristine ng-valid"> 
+                    <div class="form-group"> 
+                      <label for="name">How many Children?
+                      </label> 
+                      <input class="form-control" type="number" name="refChildren" ng-model="newReferal.child" required>
+                      <span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
+                        <span ng-show="myForm.refName.$error.required">Number of Children is required.
+                        </span>
+                      </span>
+                    </div> 
+                  </form>
+                  <form class="ng-pristine ng-valid"> 
+                    <div class="form-group"> 
+                      <label for="name">Number of Adults
+                      </label> 
+                      <input class="form-control" type="number" name="refAdult" ng-model="newReferal.adult" required>
+                      <span style="color:red" ng-show="myForm.refName.$dirty && myForm.refName.$invalid">
+                        <span ng-show="myForm.refName.$error.required">Number of adults is required.
+                        </span>
+                      </span>
+                    </div> 
+                  </form>
+                  <div class="form-group">
+                    <div id="gender" class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="i" ng-required="!newReferal.environment"> &nbsp; Indoors &nbsp;
+                      </label>
+                      <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        <input type="radio" name="refEnvironment" ng-model="newReferal.environment" value="o" ng-required="!newReferal.environment"> Outdoors
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <label for="description">Description
+                    </label> 
+                    <textarea class="form-control" rows="3" input type="textarea" placeholder="Enter Descriptions Here!" name="refDescription" ng-model="newReferal.description" required>
+                    </textarea> 
+                    <span style="color:red" ng-show="myForm.refDescription.$dirty && myForm.refDescription.$invalid">
+                      <span ng-show="myForm.refDescription.$error.required">Decription is required.
+                      </span>
+                    </span>
+                  </div>  
+                </form>
+                <div class="form-group">
+                  <label for="Source">Source of Referral
+                  </label>
+                  <select id="heard" class="form-control" required="">
+                    <option value="">Choose..
+                    </option>
+                    <option value="Email">Email
+                    </option>
+                    <option value="Letter">Letter
+                    </option>
+                    <option value="PhoneCall">Phone Call
+                    </option>
+                  </select>
+                </div>
+                <div class="checkbox"> 
+                  <label> 
+                    <input type="checkbox"> I confirm all of the above data is correct. 
+                  </label> 
+                </div> 
+              </div>
+            </div>
+            <p>{{newReferal}}
+            </p>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button ng-submit="addNewReferal()" ng-disabled="myForm.$invalid" type="submit" class="btn btn-default" data-dismiss="modal">Submit
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top">
+    <div class="col-lg-10">
+      <div class="col-md-12">
+        <form class="page-search-form ng-pristine ng-valid" role="search">
+          <div class="input-search input-search-dark referralsearch">
+            <input ng-model="searchString" type="text" class="form-control white-bg" id="inputSearch" name="search" placeholder="Search Users">
+          </div>
+        </form>
+      </div>
+      <div ng-repeat="list in refpgLists | searchFor:searchString" class="col-sm-6 padding-top referral-lists">
+        <li class="list-group-item referral-tile">
+          <div class="media">
+            <div class="media event-item">
+              <div class="media-left referral-image">
+                <div class="referral-avatar">
+                  <img class="referral-img" src="{{list.imgurl}}">
+                </div>
+              </div>
+              <div class="media-body"> 
+                <div class="event-edit-buttons referral-edit">
+                  <button ng-click="AssignResp($index)" data-toggle="modal" data-target="#assignResponder" class="icon-button">
+                    <i class="icon ion-person  event-edit">
+                    </i>
+                  </button>   
+                  <button ng-click="testPopup($index)" data-toggle="modal" data-target="#myModal"  class="icon-button">
+                    <i class="icon ion-trash-a event-edit">
+                    </i>
+                  </button>    
+                </div>
+                <h4 class="referral-name">{{list.name}}
+                </h4> 
+                <p>
+                  <span class="referral-info">PEOPLE
+                  </span> {{list.adults}} Adult  ||  {{list.children}} Child
+                </p>
+                <p>
+                  <span class="referral-info">DATE
+                  </span> {{list.referdate}}
+                </p>
+                <p>
+                  <span class="referral-info">ID
+                  </span> {{list.id}}
+                </p>
+              </div>
+              <p class="referral-assign">
+                <span class="referral-info">ASSIGNED TO
+                </span>
+                <span class="referral-responder"> name
+                </span>
+              </p>
+              <p class="referral-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus est id magna tempor ullamcorper. Vivamus imperdiet ipsum at quam mattis, vel fermentum felis malesuada.
+
+              </p>
+              <a href="/img/VISPDAT.pdf" class="vispdat-button" target="_blank">VIEW VISPDAT
+              </a>
+              <button class="moreinfo-button">MORE INFO
+              </button>
+            </div>
+          </div>
+        </li>
+      </div>
+    </div> 
+    
+    <div class="col-lg-2">
+      <div class="referralsidemenu">
+        <button class="refsidebutton greenshade" ng-click="createrefMap()" data-toggle="modal" data-target="#addNewReferal">
+          <h4 class="referral-buttontext">
+            <icon class="icon ion-plus referralicon">
+            </icon>New Referral
+          </h4>
+        </button>
+        <button class="refsidebutton blue1">
+          <h4 class="referral-buttontext">All Referrals
+          </h4>
+        </button>
+        <button class="refsidebutton blue2">
+          <h4 class="referral-buttontext">Active Referrals
+          </h4>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
