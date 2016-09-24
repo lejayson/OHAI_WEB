@@ -347,7 +347,6 @@ h4.event-heading {
 }
 
 .event-list:last-child {
-    border-bottom: 0px;
     padding-bottom: 0px;
 }
 
@@ -564,6 +563,7 @@ button:focus {
     background-color: #17373f;
     margin-left: 15px;
     margin-right: -15px;
+    padding: 0px;
 }
 
 .not-active-map {
@@ -572,7 +572,51 @@ button:focus {
 
 .info-popout {
     color: #eee;
-    padding: 25px;
+    height: 100%;
+}
+
+.popout-info-box {
+    height: 12.5%;
+    padding: 20px;
+}
+
+.pi1 {
+    background-color: rgba(0,194,146,.2);
+}
+
+.pi2 {
+    background-color: rgba(0,194,146,.3);
+}
+
+.pi3 {
+    background-color: rgba(0,194,146,.4);
+}
+
+.pi4 {
+    background-color: rgba(0,194,146,.5);
+}
+
+.pi5 {
+    background-color: rgba(0,194,146,.6);
+}
+
+.pi6 {
+    background-color: rgba(0,194,146,.7);
+}
+
+.pi7 {
+    background-color: rgba(0,194,146,.8);
+}
+
+.pi8 {
+    background-color: rgba(0,194,146,.9);
+}
+
+.popout-distrct {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .09em;
 }
 
 .infowindow-name {
@@ -841,4 +885,67 @@ p.new-population-p {
     padding-left: 20px;
     padding-top: 4px;
     padding-bottom: 4px;
+}
+
+.volunteer-button {
+    background-color: transparent;
+    border: 0px;
+    color: #aaacb5;
+}
+
+.volunteering-list {
+    height: 441px;
+    width: 50%;
+    display: inline-block;
+    float: left;
+    padding: 25px;
+    background-color: #fb9678;
+    color: #fff;
+	overflow-y: scroll;
+}
+
+.volunteer-emailblast {
+    height: 100%;
+    width: 50%;
+    display:inline-block;
+}
+
+.btn-primary {
+    background-color: #fb9678;
+    border-color: #fb9678;
+}
+
+.new-referral-scroll {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.responderlist-radios {
+    padding: 5px;
+    padding-left: 30px;
+    display: block;
+    width: 500px;
+}
+
+.list-idnumber {
+    padding-right: 5px;
+    font-weight: 700;
+}
+;
+.btn-default:hover, .btn-default:active {
+    background-color: #244248;
+}
+
+.confirm-button:hover {
+    background-color: #244248;
+    color: #fff;
+}
+
+.cancel-button:hover {
+    background-color: #244248;
+    color: #fff;
+}
+
+.active-dash {
+	margin-top: 15px;
 }
