@@ -8,18 +8,21 @@
     </uib-alert>
   </div>
 </div>
+<div data-ng-controller="dashboardCtrl">
 <div class="map-info-container">
     <div class="row">
     <div class="col-lg-2 active-map">
-      <div class="info-popout">popout
+      <div id="info-popout" class="info-popout">{{Records.length}}
       </div>
     </div>
     <div class="row col-lg-10">
-  <div class="row map-div" data-ng-controller="dashboardCtrl">
+  <div class="row map-div">
     <div class="row col-lg-12" id="dashmap" data-tap-disabled="true">
     </div>
-        </div></div>
-    </div></div>
+        </div>
+		</div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-lg-3">
@@ -27,7 +30,7 @@
         
         <div class="chart-container lightblue">
             <h4 class="chart-title">Groups vs Individuals</h4>
-<div id="amountofpeople" class="morris-chart" style="height: 300px; width: 100%;"></div>
+			<div id="amountofpeople" class="morris-chart" style="height: 300px; width: 100%;"></div>
         </div>
     </div>
     
@@ -54,26 +57,84 @@
         <div class="hometopbutton">
             <div class="home-button">
             <h4 class="home-button-text">
-                <span class="largenumber">201</span>NEW REFERRALS TODAY</h4>
+                <span class="largenumber">4</span>NEW REFERRALS TODAY</h4>
             </div></div>
              
              <div class="hometopbutton">
             <div class="home-button2">
             <h4 class="home-button-text">
-                <span class="largenumber">2158</span>TOTAL REFERRALS</h4>
+                <span class="largenumber">22</span>TOTAL REFERRALS</h4>
             </div></div>
     </div>
 </div>   
 <div id="chartscontainer" data-ng-controller="ChartsCtrl" >
 
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="chart-container2 lightblue">
             <h4 class="chart-title">Sheltered vs. Unsheltered</h4>
         <div id="shelteredgraph"></div>
         </div>
     </div>
-    <div class="col-lg-4">test</div>
+    <div class="col-lg-6 active-dash">
+    <rd-widget>
+      <rd-widget-header icon="fa-users" title="Active Responder">
+        <input type="text" placeholder="Search" class="form-control input-sm">
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">ID
+                </th>
+                <th>Responder
+                </th>
+                <th>District
+                </th>
+                <th>Phone
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1
+                </td>
+                <td>Thomas Venegas
+                </td>
+                <td>4
+                </td>
+                <td>808-340-5279
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">2
+                </td>
+                <td>Michael K. Taylor
+                </td>
+                <td>6
+                </td>
+                <td>808-251-8385
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">3
+                </td>
+                <td>Kerri Hart
+                </td>
+                <td>3
+                </td>
+                <td>808-234-3378
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </rd-widget-body>
+      <rd-widget>
+      </rd-widget>
+    </rd-widget>
+  </div>
 </div>
 
 <div id="chartscontainer" data-ng-controller="ChartsCtrl" >
@@ -101,117 +162,16 @@
     
     
 </div>
-
-
-<div class="row">
-  <div class="col-lg-6">
-  </div>
-  <div class="col-lg-6">
-    <rd-widget>
-      <rd-widget-header icon="fa-users" title="Users">
-        <input type="text" placeholder="Search" class="form-control input-sm">
-      </rd-widget-header>
-      <rd-widget-body classes="medium no-padding">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th class="text-center">ID
-                </th>
-                <th>Username
-                </th>
-                <th>Role
-                </th>
-                <th>Account
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">1
-                </td>
-                <td>Joe Bloggs
-                </td>
-                <td>Super Admin
-                </td>
-                <td>AZ23045
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">2
-                </td>
-                <td>Timothy Hernandez
-                </td>
-                <td>Admin
-                </td>
-                <td>AU24783
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">3
-                </td>
-                <td>Joe Bickham
-                </td>
-                <td>User
-                </td>
-                <td>AM23781
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </rd-widget-body>
-      <rd-widget>
-      </rd-widget>
-    </rd-widget>
-  </div>
 </div>
-<div class="row">
-  <div class="col-lg-6">
-    <rd-widget>
-      <rd-widget-header icon="fa-plus" title="Extras">
-        <button class="btn btn-sm btn-info">Button
-        </button>
-      </rd-widget-header>
-      <rd-widget-body>
-        <div class="message">
-          This is a standard message which will also work the ".no-padding" class, I can also 
-          <span class="error">be an error message!
-          </span>
-        </div>
-        <hr>
-        <div class="message">
-          <a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap
-          </a> is included, so you can use 
-          <a href="#" tooltip="I'm a tooltip!">tooltips
-          </a> and all of the other native Bootstrap JS components!
-        </div>
-      </rd-widget-body>
-    </rd-widget>
-  </div>
-  <div class="col-lg-6">
-    <rd-widget>
-      <rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
-        <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit
-        </a>
-      </rd-widget-header>
-      <rd-widget-body>
-        <rd-loading>
-        </rd-loading>
-      </rd-widget-body>
-    </rd-widget>
-  </div>
-</div>
-
     
-    <script>
+<script>
 
         
 window.a = Morris.Donut({
   element: 'amountofpeople',
   data: [
-    {value: 22, label: 'Groups'},
-    {value: 75, label: 'Individuals'}
+    {value: 10, label: 'Groups'},
+    {value: 12, label: 'Individuals'}
   ],
   backgroundColor: '#fff',
   labelColor: '#060',
@@ -227,10 +187,10 @@ window.a = Morris.Donut({
         window.b = Morris.Donut({
   element: 'test2',
   data: [
-    {value: 30, label: 'Phone'},
-    {value: 15, label: 'Email'},
-    {value: 65, label: 'App'},
-    {value: 5, label: 'Letters'}
+    {value: 2, label: 'Phone'},
+    {value: 5, label: 'Email'},
+    {value: 14, label: 'App'},
+    {value: 1, label: 'Letters'}
   ],
   backgroundColor: '#fff',
   labelColor: '#060',
@@ -249,8 +209,8 @@ window.a = Morris.Donut({
         window.m = Morris.Donut({
   element: 'test',
   data: [
-    {value: 70, label: 'Males'},
-    {value: 82, label: 'Females'}
+    {value: 8, label: 'Males'},
+    {value: 14, label: 'Females'}
   ],
   backgroundColor: '#fff',
   labelColor: '#060',
@@ -267,40 +227,41 @@ window.a = Morris.Donut({
 
         
 window.d = Morris.Area({
+
   element: 'shelteredgraph',
    data: [{
-            period: '10',
+            period: '2016-04',
             unsheltered: 59,
             Sheltered: 30,
             
         }, {
-            period: '11',
+            period: '2016-05',
             unsheltered: 30,
             Sheltered: 25,
             
         }, {
-            period: '12',
+            period: '2016-06',
             unsheltered: 80,
             Sheltered: 30,
             
         }, {
-            period: '13',
+            period: '2016-07',
             unsheltered: 100,
             Sheltered: 83,
             
         }, {
-            period: '14',
+            period: '2016-08',
             unsheltered: 60,
             Sheltered: 43,
             
         }, {
-            period: '15',
+            period: '2016-09',
             unsheltered: 105,
             Sheltered: 90,
             
         },
          {
-            period: '16',
+            period: '2016-10',
             unsheltered: 102,
             Sheltered: 94,
            
@@ -319,4 +280,4 @@ window.d = Morris.Area({
         lineColors: ['#b4becb', '#00c292'],
         resize: true
    });
-    </script>
+</script>
